@@ -1,18 +1,16 @@
 # Emotional-Detector-using-CNN-and-OpencV
 This is an Emotional detector that was made using a CNN model which is being implemented on a live camera using the OpenCV modules
 
-#Emotion Detector
+Emotion Detector
 
 1.CNN Model file 
 We build the CNN model using tensorflow and keras and use other python modules to plot the loss and accuracy results 
 We use a Kaggle notebook to build this as we can directly load the dataset without having to download the dataset
-The dataset used for this model is Face expression recognition dataset by JONATHAN OHEIX
-link for the dataset-https://www.kaggle.com/datasets/jonathanoheix/face-expression-recognition-dataset
 
 Code:
-
-import numpy as np  
-import pandas as pd 
+'''python
+import numpy as np # linear algebra
+import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 
 import os
 for dirname, _, filenames in os.walk('/kaggle/input'):
@@ -25,17 +23,17 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import os
 import matplotlib.pyplot as plt
 
-importing the required deeplearning modules
+#importing the required deeplearning modules
 from tensorflow.keras.utils import load_img
 from keras.preprocessing.image import ImageDataGenerator 
-from keras.layers import Dense,Input,Dropout,Flatten,Conv2D,Activation,MaxPooling2D,BatchNormalization 
+from keras.layers import Dense,Input,Dropout,Flatten,Conv2D,Activation,MaxPooling2D,BatchNormalization #CNN layers
 from keras.models import Model, Sequential 
 from keras.optimizers import Adam
 from keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
 from tensorflow.keras.layers import Reshape, SimpleRNN
 from tensorflow.keras.layers import LSTM
 
-Setting up the training set to be used and viewing the dataset
+#Setting up the training set to be used and viewing the dataset
 import random
 expressions = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
 random.shuffle(expressions)
@@ -57,7 +55,7 @@ for i in range(1,37):
 plt.tight_layout()
 plt.show()
 
-Splitting the dataset into training and validation i.e test sets
+#Splitting the dataset into training and validation i.e test sets
 batch_size = 128
 train_datagenerator = ImageDataGenerator()
 validation_datagenerator = ImageDataGenerator()
@@ -125,10 +123,8 @@ print(model.output_shape)  # Add this line in your code
 # Reshape for RNN or LSTM
 model.add(Reshape((9, 512)))  # Adjust based on the actual output shape
 
-Add RNN or LSTM layer
- In an RNN, the network maintains hidden states that capture information about previous inputs in the sequence. This hidden state is updated at each time step and influences the processing of the current input.
-
-
+# Add RNN or LSTM layer
+# In an RNN, the network maintains hidden states that capture information about previous inputs in the sequence. This hidden state is updated at each time step and influences the processing of the current input.
 However, standard RNNs have limitations in capturing long-term dependencies, known as the vanishing gradient problem, which makes them less effective for tasks that require modeling long-range dependencies in the input sequence.
 #LSTMs are a specific type of RNN designed to overcome the vanishing gradient problem and better capture long-term dependencies.
 LSTMs have a more complex architecture with a memory cell, input gate, forget gate, and output gate. These gates allow LSTMs to selectively read, write, and forget information in the memory cell, enabling them to maintain information over longer sequences.
@@ -261,7 +257,7 @@ plt.plot(history.history['accuracy'], label='Training Accuracy')
 plt.plot(history.history['val_accuracy'], label='Testing Accuracy')
 plt.legend(loc='lower right')
 plt.show()
-
+'''
 
 2.Run file
 We can use any ide like pycharm,spyder,vscode,atom or even jupyter notebooks 
@@ -326,5 +322,12 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+
+
+
+
+
+   
+                                                
 
 
