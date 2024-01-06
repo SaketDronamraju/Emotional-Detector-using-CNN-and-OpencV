@@ -7,7 +7,7 @@ Emotion Detector
 
 1.CNN Model file  
 We build the CNN model using tensorflow and keras and use other python modules to plot the loss and accuracy results 
-We use a Kaggle notebook to build this as we can directly load the dataset without having to download the dataset.
+We use a Kaggle notebook to build this as we can directly load the dataset without having to download the dataset.  
 The dataset used is - https://www.kaggle.com/datasets/jonathanoheix/face-expression-recognition-dataset
 
 Code:
