@@ -1,7 +1,7 @@
 
 # Emotion Detection using CNN and OpenCV
 
-This is an Emotional detector that was made using a CNN model which is being implemented on a live camera using the OpenCV modules
+This is an Emotional detector that was made using a CNN model which is being implemented on a live camera using OpenCV modules
 
 Emotion Detector
 
