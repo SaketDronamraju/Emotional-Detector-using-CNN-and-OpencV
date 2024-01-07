@@ -335,6 +335,8 @@ while True:
 cap.release()  
 cv2.destroyAllWindows()  
 
+
+
 The Demo.md file shows the model being implented using a live camera
 
 
